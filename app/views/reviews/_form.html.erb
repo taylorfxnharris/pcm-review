@@ -1,7 +1,8 @@
 <%= form_for([@restaurant, @review]) do |f| %>
   <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+    <div id="error-explanation" class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h4>
 
       <ul>
       <% @review.errors.full_messages.each do |message| %>
@@ -10,8 +11,6 @@
       </ul>
     </div>
   <% end %>
-
-
 
   <div id="star-rating"></div>
   <div class="form-group">
@@ -23,10 +22,9 @@
   </div>
 <% end %>
 
-
 <script>
- $('#star-rating').raty({
-  path: 'https://s3.amazonaws.com/taylorharrisproject2/stars',
-  scoreName: 'review[rating]'
- });
- </script>
+  $('#star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelpdemo/stars',
+    scoreName: 'review[rating]'
+  });
+</script>
