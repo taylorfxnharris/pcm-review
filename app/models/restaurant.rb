@@ -1,4 +1,5 @@
 class Restaurant < ActiveRecord::Base
   mount_uploader :image, ImageUploader
-end
 
+  has_many :reviews
+end
