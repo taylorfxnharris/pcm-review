@@ -21,7 +21,7 @@ group :development do
   gem 'spring'
   gem 'rails_12factor', group: :production
   gem 'pg', group: :production
-  gem "fog-aws"
+  gem "fog"
   gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
   gem 'figaro'
   gem "mini_magick"
