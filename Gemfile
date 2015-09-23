@@ -1,9 +1,14 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 gem 'fog', require: 'fog/aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'devise'
-ruby '2.2.0'
+gem 'figaro'
+gem "mini_magick"
+gem 'searchkick'
+gem 'unf'
+
 
 gem 'rails', '4.2.4'
 gem 'sqlite3', group: :development
@@ -24,9 +29,5 @@ group :development do
   gem 'spring'
   gem 'rails_12factor', group: :production
   gem 'pg', group: :production
-  gem 'figaro'
-  gem "mini_magick"
-  gem 'searchkick'
-  gem 'unf'
 end
 
