@@ -27,5 +27,6 @@ group :development do
   gem "mini_magick"
   gem 'devise'
   gem 'searchkick'
+  gem 'unf'
 end
 
