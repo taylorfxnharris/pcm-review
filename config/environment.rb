@@ -1,4 +1,4 @@
-require 'carrierwave/orm/activerecord'
+require 'carrierwave'
 # Load the Rails application.
 require File.expand_path('../application', __FILE__)
 
