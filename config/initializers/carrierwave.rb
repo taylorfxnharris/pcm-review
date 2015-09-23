@@ -1,21 +1,17 @@
 CarrierWave.configure do |config|
-  config.fog_credentials = {
-    provider:              'AWS',                        # required
-    aws_access_key_id:     ENV['aws_access_key_id'],                        # required
-    aws_secret_access_key: ENV['aws_secret_access_key'],                         # required
-    region:                'eu-west-2'
-  }
-   # For testing, upload files to local `tmp` folder.
-  if Rails.env.test? || Rails.env.development?
+  if Rails.env.development?
+    config.storage = :file
+  elsif Rails.env.test?
     config.storage = :file
     config.enable_processing = false
-    config.root = "#{Rails.root}/tmp"
   else
-    config.storage = :fog
+    config.storage = :aws
+    config.aws_bucket = Rails.configuration.files.aws_bucket
+    config.aws_acl = 'public-read'
+    config.aws_credentials = {
+      access_key_id: Rails.configuration.aws.access_key_id,
+      secret_access_key: Rails.configuration.aws.secret_access_key,
+      region: Rails.configuration.aws.region,
+    }
   end
-
-  # To let CarrierWave work on heroku
-  config.cache_dir = "#{Rails.root}/tmp/uploads"
-  config.fog_directory = ENV['taylorharrisproject2']
 end
-

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'fog', require: 'fog/aws'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
 ruby '2.2.0'
 
 gem 'rails', '4.2.4'
@@ -21,8 +24,6 @@ group :development do
   gem 'spring'
   gem 'rails_12factor', group: :production
   gem 'pg', group: :production
-  gem "fog-aws"
-  gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
   gem 'figaro'
   gem "mini_magick"
   gem 'devise'
