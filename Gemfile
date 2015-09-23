@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'fog', require: 'fog/aws'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
-
+gem 'devise'
 ruby '2.2.0'
 
 gem 'rails', '4.2.4'
@@ -26,7 +26,6 @@ group :development do
   gem 'pg', group: :production
   gem 'figaro'
   gem "mini_magick"
-  gem 'devise'
   gem 'searchkick'
   gem 'unf'
 end
